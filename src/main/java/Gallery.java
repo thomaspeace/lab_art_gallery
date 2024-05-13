@@ -16,4 +16,24 @@ public class Gallery {
         this.stock = new ArrayList<>();
     }
 
+    public String getGalleryName() {
+        return this.name;
+    }
+
+    public int getTill() {
+        return this.till;
+    }
+
+    public ArrayList<Artwork> getStock() {
+        return this.stock;
+    }
+
+    public void setTill(int amount) {
+        this.till += amount;
+    }
+
+    public void setStock(ArrayList<Artwork> stock) {
+        this.stock = stock;
+
+    }
 }
