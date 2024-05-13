@@ -1,15 +1,19 @@
+import java.util.ArrayList;
+
 public class Customer {
 
 //    Properties
 
     private String name;
     private int wallet;
+    private ArrayList<Artwork> artCollection;
 
 //    Constructor
 
     public Customer(String name, int wallet){
         this.name = name;
         this.wallet = wallet;
+        this.artCollection = new ArrayList<>();
     }
 
     public String getCustomerName() {
@@ -27,7 +31,15 @@ public class Customer {
 
         gallery.removeArtworkFromStock(nameOfArt, artwork);
 
-        }
+        this.artCollection.add(artwork);
+
+    }
+
+    public ArrayList<Artwork> getArtCollection() {
+        return this.artCollection;
+    }
+
+
 }
 
 

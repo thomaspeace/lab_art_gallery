@@ -43,4 +43,14 @@ public class Gallery {
             }
         }
     }
+
+    public int stockTake() {
+        int totalStock = 0;
+
+        for(int i=0; i < this.stock.size(); i++) {
+            totalStock += this.stock.get(i).getPrice();
+        }
+        return totalStock;
+    }
+
 }

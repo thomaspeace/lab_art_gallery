@@ -1,5 +1,8 @@
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class CustomerTest {
@@ -30,11 +33,26 @@ public class CustomerTest {
     }
 
     @Test
-    public void canBuyArtwork() {
+    public void canBuyArtworkAndChangeWallet() {
         customer.buyArtwork("Flower", gallery, artwork);
         int result = customer.getWallet();
         assertThat(result).isEqualTo(50);
     }
+
+    @Test
+    public void canGetArtCollection() {
+        ArrayList<Artwork> result = customer.getArtCollection();
+        assertThat(result.isEmpty()).isEqualTo(true);
+    }
+
+    @Test
+    public void canBuyArtworkAndChangeArtCollection() {
+        customer.buyArtwork("Flower", gallery, artwork);
+        ArrayList<Artwork> result = customer.getArtCollection();
+        assertThat(result.get(0)).isEqualTo(artwork);
+    }
+
+
 
 
 }

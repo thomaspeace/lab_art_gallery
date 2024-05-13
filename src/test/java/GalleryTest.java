@@ -9,12 +9,14 @@ public class GalleryTest {
 
     Artist artist;
     Artwork artwork;
+    Artwork artwork2;
     Gallery gallery;
 
     @BeforeEach
     public void setUp() {
         artist = new Artist("Picasso");
         artwork = new Artwork("Flower", 100, artist);
+        artwork2 = new Artwork("Sunset", 300, artist);
         gallery = new Gallery("Tate Modern");
     }
 
@@ -56,4 +58,13 @@ public class GalleryTest {
         gallery.removeArtworkFromStock("Flower", artwork);
         assertThat(gallery.getStock().isEmpty()).isEqualTo(true);
     }
+
+    @Test
+    public void canStockTake() {
+        gallery.addStock(artwork);
+        gallery.addStock(artwork2);
+        int result = gallery.stockTake();
+        assertThat(result).isEqualTo(400);
+    }
+
 }
