@@ -29,9 +29,12 @@ public class CustomerTest {
         assertThat(result).isEqualTo(100);
     }
 
-//    public void canBuyArtwork() {
-//
-//    }
+    @Test
+    public void canBuyArtwork() {
+        customer.buyArtwork("Flower", gallery, artwork);
+        int result = customer.getWallet();
+        assertThat(result).isEqualTo(50);
+    }
 
 
 }

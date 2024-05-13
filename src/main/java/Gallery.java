@@ -32,8 +32,8 @@ public class Gallery {
         this.till += amount;
     }
 
-    public void setStock(ArrayList<Artwork> stock) {
-        this.stock = stock;
+    public void addStock(Artwork artwork) {
+        this.stock.add(artwork);
     }
 
     public void removeArtworkFromStock(String nameOfArt, Artwork artwork){
