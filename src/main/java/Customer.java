@@ -28,6 +28,6 @@ public class Customer {
         gallery.removeArtworkFromStock(nameOfArt, artwork);
 
         }
-    }
-
 }
+
+
