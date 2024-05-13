@@ -34,6 +34,13 @@ public class Gallery {
 
     public void setStock(ArrayList<Artwork> stock) {
         this.stock = stock;
+    }
 
+    public void removeArtworkFromStock(String nameOfArt, Artwork artwork){
+        for(int i = 0; i < this.stock.size(); i++){
+            if(this.stock.get(i).getArtworkTitle().equals(nameOfArt)){
+                this.stock.remove(i);
+            }
+        }
     }
 }

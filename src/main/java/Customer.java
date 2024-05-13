@@ -21,9 +21,13 @@ public class Customer {
     }
 
     public void buyArtwork(String nameOfArt, Gallery gallery, Artwork artwork) {
+
         this.wallet -= artwork.getPrice();
         gallery.setTill(artwork.getPrice());
-//        gallery.setStock(gallery.getStock().remove());
+
+        gallery.removeArtworkFromStock(nameOfArt, artwork);
+
+        }
     }
 
 }
